@@ -48,8 +48,10 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association
+- has_many :groups, through: members
 - has_many :messages
 - has_many :members
+
 
 ### Index
 - add_index :users, :name
@@ -61,6 +63,7 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
+- has_many :users, through: members
 - has_many :messages
 - has_many :members
 
