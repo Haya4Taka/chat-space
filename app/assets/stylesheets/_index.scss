@@ -57,7 +57,7 @@
         bottom: 0;
         .form {
           height: 50px;
-          min-width: 650px;
+          min-width: 1100px;
           form {
             height: 50px;
           }
@@ -68,7 +68,8 @@
           }
           .message-form {
             height: 50px;
-            width: 80%;
+            width: 89%;
+            min-width: 500px;
             min-width: 500px;
             line-height: 50px;
             border: none;
@@ -76,9 +77,6 @@
           }
           #hidden-image-form {
             display: none;
-          }
-          .test2 {
-            float: left;
           }
           .fa-image-icon {
             position: relative;
@@ -92,11 +90,7 @@
             background: #38AEF0;
             color: #FFFFFF;
             border-style: none;
-            // overflow: hidden;
-            // float: right;
-            // margin-left: 15px;
-            // position: relative;
-            // top: -23px;
+            float: right;
           }
         }
       }
