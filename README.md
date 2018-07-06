@@ -27,7 +27,6 @@ Things you may want to cover:
 # テーブル
 <details>
 <summary></summary>
-
 ## membersテーブル
 
 |Column|Type|Options|
@@ -38,45 +37,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-## usersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
-
-### Association
-- has_many :messages
-- has_many :members
-
-### Index
-- add_index :users, :name
-
-## groupsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many :messages
-- has_many :members
-
-## messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|body|text|null: false|
-|image|string||
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Associatioin
-- belongs_to :group
-- belongs_to :user
-
 </details>
 
-
+## usersテーブル
