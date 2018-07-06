@@ -1,0 +1,105 @@
+.index {
+  &__contents {
+    height: 100%;
+    &__left-content {
+      height: 100%;
+      width: 300px;
+      background: #2f3e51;
+      float: left;
+    }
+    &__right-content {
+      background: #EEEEEE;
+      float: right;
+      height: 100%;
+      width: calc(100% - 300px);
+      position: relative;
+      z-index: 1;
+      &__upper-box {
+        box-sizing: border-box;
+        background: #FFFFFF;
+        height: 100px;
+        min-width: 300px;
+        padding: 35px 40px 0 40px;
+        border-bottom: solid #eeeeee 1px;
+        margin-bottom: 20px;
+        // overflow: hidden;
+        // =====================
+        // widthとheightを設定
+        // =====================
+        &__group-info {
+          float: left;
+          width: 135px;
+          height: 47px;
+          h2 {
+            line-height: 20px;
+            font-size: 20px;
+            color: #333333;
+          }
+          p.left {
+            padding-top: 15px;
+            line-height: 12px;
+            font-size: 12px;
+            color: #999999;
+            overflow: hidden;
+          }
+        }
+      }
+      &__message-space {
+        padding: 0 40px 0 40px;
+      }
+      &__bottom-box {
+        box-sizing: border-box;
+        height: 90px;
+        width: 100%;
+        padding: 20px 40px 20px 40px;
+        background: #C0C0C0;
+        position: absolute;
+        bottom: 0;
+        .form {
+          height: 50px;
+          min-width: 650px;
+          form {
+            height: 50px;
+          }
+          form:after {
+            content: "";
+            clear: both;
+            display: block;
+          }
+          .message-form {
+            height: 50px;
+            width: 80%;
+            min-width: 500px;
+            line-height: 50px;
+            border: none;
+            float: left;
+          }
+          #hidden-image-form {
+            display: none;
+          }
+          .test2 {
+            float: left;
+          }
+          .fa-image-icon {
+            position: relative;
+            left: -30px;
+            top: 12px;
+            bottom: 0;
+          }
+          .submit-button {
+            height: 50px;
+            width: 100px;
+            background: #38AEF0;
+            color: #FFFFFF;
+            border-style: none;
+            // overflow: hidden;
+            // float: right;
+            // margin-left: 15px;
+            // position: relative;
+            // top: -23px;
+          }
+        }
+      }
+    }
+  }
+}
