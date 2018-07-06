@@ -14,13 +14,16 @@
           = link_to root_path do
             = fa_icon("edit lg fw icon--color")
     - 2.times do
-      = render partial: "group-box"
+      .group-box
+        %h3 sample-group
+        %p sample-text
   .index__contents__right-content
     .index__contents__right-content__upper-box
       .index__contents__right-content__upper-box__group-info
         %h2 #グループ名
         %p.left Membres: #member名
-      = render partial: "edit-button"
+      .edit-button
+        %p Edit
     .index__contents__right-content__message-space
       = render partial: "message-box"
     .index__contents__right-content__bottom-box
@@ -31,6 +34,5 @@
               = fa_icon("image image-icon")
               %input#hidden-image-form{type: "file"}
             %input.submit-button{type: "submit", value: "Send"}
-
 　　　
 
