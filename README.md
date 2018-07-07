@@ -24,7 +24,8 @@ Things you may want to cover:
 * ...
 
 
-## membersテーブル
+<details>
+<summary>## membersテーブル</summary>
 
 |Column|Type|Options|
 |------|----|-------|
@@ -34,3 +35,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+</details>
+
+## usersテーブル
