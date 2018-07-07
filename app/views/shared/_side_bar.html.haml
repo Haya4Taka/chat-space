@@ -1,0 +1,16 @@
+.index__contents__left-content
+  .user-box
+    %ul
+      %li.user-box__name-list
+        %h1.user-box__name
+          = current_user.name
+      %li.user-box__icon-list
+        = link_to edit_user_path(current_user) do
+          = fa_icon("cog lg fw icon--color")
+      %li.user-box__icon-list
+        = link_to root_path do
+          = fa_icon("edit lg fw icon--color")
+  - 2.times do
+    .group-box
+      %h3 sample-group
+      %p sample-text
