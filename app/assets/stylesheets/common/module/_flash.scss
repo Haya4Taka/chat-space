@@ -1,0 +1,14 @@
+.flash {
+  text-align: center;
+
+  &-notice {
+    background: #38AEF0;
+    color: #FFFFFF;
+  }
+  &-alert {
+    background: #FF0000;
+    color: #FFFFFF;
+  }
+
+}
+
