@@ -1,22 +1,5 @@
-.nav
-  %p.nav__text チャットグループが作成されました
-
 .index__contents
-  .index__contents__left-content
-    .user-box
-      %ul
-        %li.user-box__name-list
-          %h1.user-box__name Hayashi Takahiro
-        %li.user-box__icon-list
-          = link_to root_path do
-            = fa_icon("cog lg fw icon--color")
-        %li.user-box__icon-list
-          = link_to root_path do
-            = fa_icon("edit lg fw icon--color")
-    - 2.times do
-      .group-box
-        %h3 sample-group
-        %p sample-text
+  = render partial: "/shared/side_bar"
   .index__contents__right-content
     .index__contents__right-content__upper-box
       .index__contents__right-content__upper-box__group-info
@@ -25,12 +8,13 @@
       .edit-button
         %p Edit
     .index__contents__right-content__message-space
-      = render partial: "message-box"
+      - @messages.each do |message|
+        = render partial: "message-box", locals: {message: message}
     .index__contents__right-content__bottom-box
       .form
-        %form{action: "/messages", method: "post"}
-          %input.message-form{type: "text",placeholder: "type a message"}
-            %label.upload-label{for: "hidden-image-form"}
-              = fa_icon("image image-icon")
-              %input#hidden-image-form{type: "file"}
-            %input.submit-button{type: "submit", value: "Send"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: "message-form", placeholder: "type a message"
+          = f.label :image, class: "upload-label" do
+            = fa_icon("image image-icon")
+            = f.file_field :image, class: "hidden-image-form"
+          = f.submit "Send", class: "submit-button"
