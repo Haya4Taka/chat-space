@@ -8,9 +8,14 @@
         = link_to edit_user_path(current_user) do
           = fa_icon("cog lg fw icon--color")
       %li.user-box__icon-list
-        = link_to root_path do
+        = link_to new_group_path do
           = fa_icon("edit lg fw icon--color")
-  - 2.times do
-    .group-box
-      %h3 sample-group
-      %p sample-text
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group), class: "group-link" do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message
+

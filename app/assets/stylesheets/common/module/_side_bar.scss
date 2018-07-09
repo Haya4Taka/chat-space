@@ -1,0 +1,46 @@
+.index__contents__left-content {
+  height: 100%;
+  width: 300px;
+  background: #2f3e51;
+  float: left;
+  .user-box {
+    height: 100px;
+    background: #253141;
+    line-height: 100px;
+    padding: 0 20px 0 20px;
+    &__name-list {
+      float: left;
+    }
+    &__icon-list {
+      float: right;
+    }
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+  }
+  .groups {
+    .group {
+      padding: 20px 20px 20px 20px;
+      color: #FFFFFF;
+      .group-link {
+        text-decoration: none;
+      }
+      &__name {
+        font-size: 15px;
+        margin-bottom: 5px;
+        text-decoration: none !important;
+        color: #FFFFFF;
+      }
+      &__message {
+        font-size: 11px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.fa-icon--color {
+  color: #FFFFFF;
+}

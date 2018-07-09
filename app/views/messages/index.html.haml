@@ -8,12 +8,13 @@
       .edit-button
         %p Edit
     .index__contents__right-content__message-space
-      = render partial: "message-box"
+      - @messages.each do |message|
+        = render partial: "message-box", locals: {message: message}
     .index__contents__right-content__bottom-box
       .form
-        %form{action: "/messages", method: "post"}
-          %input.message-form{type: "text",placeholder: "type a message"}
-            %label.upload-label{for: "hidden-image-form"}
-              = fa_icon("image image-icon")
-              %input#hidden-image-form{type: "file"}
-            %input.submit-button{type: "submit", value: "Send"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: "message-form", placeholder: "type a message"
+          = f.label :image, class: "upload-label" do
+            = fa_icon("image image-icon")
+            = f.file_field :image, class: "hidden-image-form"
+          = f.submit "Send", class: "submit-button"
