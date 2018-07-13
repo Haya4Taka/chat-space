@@ -17,6 +17,7 @@ $(function() {
                   </div>`
       return html;
   }
+
   function scroll_to_bottom() {
     $('.index__contents__right-content__message-space').animate({
       scrollTop: $('.index__contents__right-content__message-space')[0].scrollHeight
