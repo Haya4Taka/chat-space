@@ -21,7 +21,6 @@
         min-width: 300px;
         padding: 35px 40px 0 40px;
         border-bottom: solid #eeeeee 1px;
-        margin-bottom: 20px;
         &__group-info {
           float: left;
           width: 135px;
@@ -41,7 +40,10 @@
         }
       }
       &__message-space {
-        padding: 0 40px 0 40px;
+        box-sizing: border-box;
+        padding: 20px 40px 0 40px;
+        overflow: auto;
+        height: calc(100% - 190px);
       }
       &__bottom-box {
         box-sizing: border-box;
@@ -49,22 +51,19 @@
         width: 100%;
         padding: 20px 40px 20px 40px;
         background: #C0C0C0;
-        position: absolute;
-        bottom: 0;
         .form {
           height: 50px;
-          min-width: 1060px;
-          form {
-            height: 50px;
-          }
+          min-width: 760px;
+          overflow: hidden;
           form:after {
             content: "";
             clear: both;
             display: block;
           }
           .message-form {
-            height: 50px;
-            min-width: 945px;
+            height: cal50px;
+            width: 100%;
+            width: calc(100% - 115px);
             line-height: 50px;
             border: none;
             float: left;
