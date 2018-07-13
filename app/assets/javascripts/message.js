@@ -13,8 +13,8 @@ $(function() {
                     <p class="message-box__content">
                       ${ message.content }
                     </p>
-                      ${ image_content }
-                    </div>`
+                    ${ image_content }
+                  </div>`
       return html;
   }
   function scroll_to_bottom() {
