@@ -22,10 +22,6 @@
         padding: 35px 40px 0 40px;
         border-bottom: solid #eeeeee 1px;
         margin-bottom: 20px;
-        // overflow: hidden;
-        // =====================
-        // widthとheightを設定
-        // =====================
         &__group-info {
           float: left;
           width: 135px;
@@ -73,7 +69,7 @@
             border: none;
             float: left;
           }
-          #hidden-image-form {
+          .hidden-image-form {
             display: none;
           }
           .fa-image-icon {

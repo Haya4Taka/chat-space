@@ -1,15 +1,9 @@
 .message-box
-  %h3.message-box__name #投稿したユーザーの名前
-  %p.message-box__date #yyyy/mm/dd hh:mm:ss
-  %p.message-box__content サンプル
-
-.message-box
-  %h3.message-box__name #投稿したユーザーの名前
-  %p.message-box__date #yyyy/mm/dd hh:mm:ss
-  %p.message-box__content
-    サンプル
-    %br
-    サンプル
-    %br
-    サンプル
-
+  %h3.message-box__name
+    = message.user.name
+  %p.message-box__date
+    = message.created_at
+  - if message.content.present?
+    %p.message-box__content
+      = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

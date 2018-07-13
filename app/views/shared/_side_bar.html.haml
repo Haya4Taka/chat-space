@@ -1,0 +1,21 @@
+.index__contents__left-content
+  .user-box
+    %ul
+      %li.user-box__name-list
+        %h1.user-box__name
+          = current_user.name
+      %li.user-box__icon-list
+        = link_to edit_user_path(current_user) do
+          = fa_icon("cog lg fw icon--color")
+      %li.user-box__icon-list
+        = link_to new_group_path do
+          = fa_icon("edit lg fw icon--color")
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group), class: "group-link" do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message
+

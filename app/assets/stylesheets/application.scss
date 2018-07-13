@@ -1,9 +1,12 @@
 @import "./reset";
 @import "font-awesome";
 @import "./common/common";
-@import "./common/module/nav";
 @import "./index/";
+@import "./user/";
+@import "./group";
 @import "./common/module/user-box";
 @import "./common/module/group-box";
 @import "./common/module/edit-button";
-@import "./common/module/message-box"
+@import "./common/module/message-box";
+@import "./common/module/flash";
+@import "./common/module/side_bar";
