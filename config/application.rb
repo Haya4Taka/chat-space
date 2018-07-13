@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module ChatSpace
   class Application < Rails::Application
+
     config.generators do |g|
       g.stylesheets false
       g.javascripts false
@@ -16,6 +17,9 @@ module ChatSpace
     end
 
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+    config.action_view.automatically_disable_submit_tag = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
