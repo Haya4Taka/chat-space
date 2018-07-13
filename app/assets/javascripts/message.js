@@ -47,8 +47,7 @@ $(function() {
     .done(function(data){
       var html = buildHTML(data);
       $('.index__contents__right-content__message-space').append(html);
-      $('.message-form').val('');
-      $('.hidden-image-form').val('');
+      $('.new_message')[0].reset();
       $('.index__contents__right-content__message-space').animate({
         scrollTop: $('.index__contents__right-content__message-space')[0].scrollHeight
       },{duration:500});
@@ -58,6 +57,3 @@ $(function() {
     })
   });
 });
-
-// if($(.message-form).val() == "")
-// /public/uploads/message/image/${ message.image_url}/
