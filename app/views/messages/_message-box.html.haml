@@ -1,8 +1,9 @@
 .message-box
-  %h3.message-box__name
-    = message.user.name
-  %p.message-box__date
-    = message.created_at
+  .message-box__upper-box
+    %h3.message-box__name
+      = message.user.name
+    %p.message-box__date
+      = message.created_at
   - if message.content.present?
     %p.message-box__content
       = message.content
