@@ -21,6 +21,12 @@ $(function() {
                     </div>`
       return html;
   }
+  function scroll_to_bottom() {
+    $('.index__contents__right-content__message-space').animate({
+      scrollTop: $('.index__contents__right-content__message-space')[0].scrollHeight
+      },{duration:500});
+  }
+
   $('.new_message').on("submit", function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -37,9 +43,7 @@ $(function() {
       var html = buildHTML(data);
       $('.index__contents__right-content__message-space').append(html);
       $('.new_message')[0].reset();
-      $('.index__contents__right-content__message-space').animate({
-        scrollTop: $('.index__contents__right-content__message-space')[0].scrollHeight
-      },{duration:500});
+      scroll_to_bottom();
     })
     .fail(function(){
       alert('error');
