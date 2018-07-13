@@ -1,10 +1,6 @@
 $(function() {
   function buildHTML(message){
-      if( message.image["url"] !== null) {
-      var image_content = `<img class="lower_message__image" src="${ message.image["url"]}">`
-      } else {
-      var image_content = ""
-      }
+      var image_content = message.image["url"] == null ? "" : `<img class="lower_message__image" src="${ message.image["url"]}">`
       var html = `<div class="message-box">
                     <div class="message-box__upper-box">
                       <h3 class="message-box__name">
