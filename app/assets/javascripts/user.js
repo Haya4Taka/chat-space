@@ -34,8 +34,7 @@ $(function() {
     })
     .done(function(users){
       search_result.empty();
-      var members = $("input[name='group[user_ids][]']");
-      members.each(function() {
+      $("input[name='group[user_ids][]']").each(function() {
         var member_id = $(this).attr('value');
         users.some(function(v, i){
           if (v.id==member_id) users.splice(i,1);
