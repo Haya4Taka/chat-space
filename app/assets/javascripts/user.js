@@ -44,7 +44,9 @@ $(function() {
         users.forEach(function(user) {
           showUser(user);
         });
-      };
+      } else {
+        search_result.append(`<div class="chat-group-user clearfix">一致するユーザはいません</div>`)
+      }
     })
     .fail(function(){
       alert("ユーザー検索に失敗しました")
