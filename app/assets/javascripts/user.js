@@ -53,15 +53,12 @@ $(function() {
   });
   $("#user-search-result").on('click', '.user-search-add', function() {
     var selected_user = $(this)
-    // console.log(this);
-    // console.log(selected_user.attr('data-user-id'));
     appendUser(selected_user);
   });
   $("#chat-group-users").on("click", '.chat-group-user__btn--remove', function() {
     $(this).parent().remove();
   })
   $("#user-search-result").on("click", '.chat-group-user__btn--add', function() {
-    // console.log($(this).parent());
     $(this).parent().remove();
   })
 });
