@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if params[:keyword] == ""
       @users = []
     else
-      @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+      @users = User.where('name LIKE(?) and name != ?', "%#{params[:keyword]}%", "#{current_user.name}" )
     end
 
     respond_to do |format|
