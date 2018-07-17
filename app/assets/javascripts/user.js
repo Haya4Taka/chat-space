@@ -52,8 +52,7 @@ $(function() {
     })
   });
   $("#user-search-result").on('click', '.user-search-add', function() {
-    var selected_user = $(this)
-    appendUser(selected_user);
+    appendUser($(this));
   });
   $("#chat-group-users").on("click", '.js-remove-btn', function() {
     $(this).parent().remove();
