@@ -17,7 +17,7 @@ $(function() {
                   <p class='chat-group-user__name'>${ user.attr('data-user-name') }</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                 </div>`
-  group_member.append(html);
+    group_member.append(html);
   }
 
   function deleteUser(user) {
@@ -55,12 +55,15 @@ $(function() {
       alert("ユーザー検索に失敗しました")
     })
   });
+
   $("#user-search-result").on('click', '.user-search-add', function() {
     appendUser($(this));
   });
+
   $("#chat-group-users").on("click", '.js-remove-btn', function() {
     $(this).parent().remove();
   })
+
   $("#user-search-result").on("click", '.js-add-btn', function() {
     $(this).parent().remove();
   })
