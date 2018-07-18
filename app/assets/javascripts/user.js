@@ -26,6 +26,9 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
+    if (input.val() == "") {
+      search_result.empty();
+    }
     $.ajax({
       type: 'GET',
       url: '/users',
