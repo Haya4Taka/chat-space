@@ -48,29 +48,28 @@ $(function() {
       alert('error');
     })
   });
-  setInterval(function() {
-    $.ajax({
-      url: window.location.pathname,
-      type: "GET",
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(messages){
-      console.log(messages);
-      message_space.empty();
-      if (messages.length !== 0) {
-        messages.forEach(function(message) {
-          var html = buildHTML(message);
-          message_space.append(html);
-        });
-      }
-    })
-    .fail(function() {
-      alert("失敗したよ")
-    })
-  },5000);
-});
 
-// if($(.message-form).val() == "")
-// /public/uploads/message/image/${ message.image_url}/
+  if ($(".index__contents__right-content").length) {
+    setInterval(function() {
+      $.ajax({
+        url: window.location.pathname,
+        type: "GET",
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(messages){
+        message_space.empty();
+        if (messages.length !== 0) {
+          messages.forEach(function(message) {
+            var html = buildHTML(message);
+            message_space.append(html);
+          });
+        }
+      })
+      .fail(function() {
+        alert("失敗したよ")
+      })
+    },5000);
+  }
+});
