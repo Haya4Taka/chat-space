@@ -1,4 +1,6 @@
 $(function() {
+  var message_space = $('.index__contents__right-content__message-space');
+
   function buildHTML(message){
       var image_content = message.image["url"] == null ? "" : `<img class="lower_message__image" src="${ message.image["url"]}">`
       var html = `<div class="message-box">
@@ -38,7 +40,7 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.index__contents__right-content__message-space').append(html);
+      message_space.append(html);
       $('.new_message')[0].reset();
       scroll_to_bottom();
     })
@@ -46,4 +48,28 @@ $(function() {
       alert('error');
     })
   });
+
+  if ($(".index__contents__right-content").length) {
+    setInterval(function() {
+      $.ajax({
+        url: window.location.pathname,
+        type: "GET",
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(messages){
+        message_space.empty();
+        if (messages.length !== 0) {
+          messages.forEach(function(message) {
+            var html = buildHTML(message);
+            message_space.append(html);
+          });
+        }
+      })
+      .fail(function() {
+        alert("失敗したよ")
+      })
+    },5000);
+  }
 });
