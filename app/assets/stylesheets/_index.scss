@@ -23,19 +23,14 @@
         border-bottom: solid #eeeeee 1px;
         &__group-info {
           float: left;
-          width: 135px;
-          height: 47px;
           h2 {
             line-height: 20px;
             font-size: 20px;
             color: #333333;
           }
-          p.left {
+          .group-members {
             padding-top: 15px;
             line-height: 12px;
-            font-size: 12px;
-            color: #999999;
-            overflow: hidden;
           }
         }
       }

@@ -15,4 +15,12 @@ class Group < ApplicationRecord
       "まだメッセージはありません"
     end
   end
+
+  def members_name
+    member_name = []
+    self.users.each do |user|
+      member_name << user.name
+    end
+    return member_name.join(", ")
+  end
 end

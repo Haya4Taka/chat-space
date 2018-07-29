@@ -3,10 +3,10 @@
   .index__contents__right-content
     .index__contents__right-content__upper-box
       .index__contents__right-content__upper-box__group-info
-        %h2 #グループ名
-        %p.left Membres:
-        - @group.users.each do |user|
-          = user.name
+        %h2
+          = @group.name
+        .group-members
+          = "member: #{@group.members_name}"
       .edit-button
         = link_to edit_group_path(@group.id) do
           %p Edit
